@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>川柳ミキサー</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="test.js"></script>
+  </head>
+
+  <body>
+    <div id="headerArea">
+      <h1>川柳mixer</h1>
+    </div>
+    <div id="main">
+      <img id="imageBox" src="img/makimono.jpg" />
+
+      <p id="content0" class="content">first</p>
+      <p id="content1" class="content">second</p>
+      <p id="content2" class="content">third</p>
+    </div>
+    <div class="interface">
+      <ul>
+        <a href="#!" id="btn-origin" class="btn-circle-flat">ORIGIN</a>
+        <a href="#!" id="btn-mix" class="btn-circle-flat">MIX</a>
+        <a href="#!" id="btn-copy" class="btn-circle-flat">COPY</a>
+      </ul>
+      <label>
+        <input type="checkbox" id="check-sara" class="genreSelector" checked />
+        サラリーマン川柳
+      </label>
+      <label>
+        <input type="checkbox" id="check-silver" class="genreSelector" />
+        シルバー川柳
+      </label>
+      <label>
+        <input type="checkbox" id="check-kurashi" class="genreSelector" />
+        くらしの川柳
+      </label>
+    </div>
+  </body>
+  <script type="text/javascript" src="./data/data.js"></script>
+  <script type="text/javascript" src="forpresen.js"></script>
+</html>
