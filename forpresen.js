@@ -2,7 +2,9 @@
 // 1行目に記載している 'use strict' は削除しないでください
 // 厳格モード(曖昧な実装をエラーにしてくれる)
 
-console.log("my application");
+console.log("川柳ミキサーへようこそ！");
+console.log("どんな川柳ができあがるか楽しみですね！");
+console.log("おもしろい川柳がでたらCopyボタンをクリックしてシェアしましょう！");
 console.log(database);
 
 /**
@@ -50,8 +52,9 @@ function getSenryu() {
 const btnMix = document.getElementById("btn-mix");
 btnMix.addEventListener("click", () => {
   const senryuData = getSenryu();
-  if (!senryuData) {
+  if (senryuData.length === 0) {
     window.alert("川柳ジャンルを選択してください");
+    return;
   }
   changeText(0, senryuData[getRandomInt(senryuData.length)][0]);
   changeText(1, senryuData[getRandomInt(senryuData.length)][1]);
@@ -62,8 +65,9 @@ btnMix.addEventListener("click", () => {
 const btnOrigin = document.getElementById("btn-origin");
 btnOrigin.addEventListener("click", () => {
   const senryuData = getSenryu();
-  if (!senryuData) {
+  if (senryuData.length === 0) {
     window.alert("川柳ジャンルを選択してください");
+    return;
   }
   const index = getRandomInt(senryuData.length);
   changeText(0, senryuData[index][0]);
@@ -84,7 +88,8 @@ btnCopy.addEventListener("click", () => {
 
 // 初期の川柳を表示
 let initialSenryu = getSenryu();
-if (initialSenryu) {
+if (initialSenryu.length) {
+  const index = getRandomInt(initialSenryu.length);
   changeText(0, initialSenryu[getRandomInt(initialSenryu.length)][0]);
   changeText(1, initialSenryu[getRandomInt(initialSenryu.length)][1]);
   changeText(2, initialSenryu[getRandomInt(initialSenryu.length)][2]);
