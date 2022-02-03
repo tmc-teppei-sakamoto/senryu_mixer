@@ -13,6 +13,10 @@
   margin-top: 10px;
 }
 
+#counterArea {
+  text-align: center;
+}
+
 .content {
   position: absolute;
   writing-mode: vertical-rl;
@@ -20,10 +24,20 @@
   font-weight: bold;
 }
 
+#updateCounter {
+  color: white;
+  font-size: 1.3em;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #content0 {
   top: 25%;
   left: 45%;
 }
+
 #content1 {
   top: 30%;
   left: 35%;
