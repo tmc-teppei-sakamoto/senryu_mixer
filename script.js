@@ -7,6 +7,18 @@ console.log("どんな川柳ができあがるか楽しみですね！");
 console.log("おもしろい川柳がでたらCopyボタンをクリックしてシェアしましょう！");
 console.log(database);
 
+// アクセス用の変数を用意
+let updateCountValue = 1;
+const updateCounter = document.getElementById("updateCounter");
+
+/**
+ * カウンターを増やす
+ */
+function incrementCounter() {
+  updateCountValue++;
+  updateCounter.innerText = "第 " + String(updateCountValue) + " 句";
+}
+
 /**
  * @param {number} max
  * @returns {number} 0からmax-1までのランダム整数を返す
@@ -59,6 +71,7 @@ btnMix.addEventListener("click", () => {
   changeText(0, senryuData[getRandomInt(senryuData.length)][0]);
   changeText(1, senryuData[getRandomInt(senryuData.length)][1]);
   changeText(2, senryuData[getRandomInt(senryuData.length)][2]);
+  incrementCounter();
 });
 
 // originボタンクリック
@@ -73,6 +86,7 @@ btnOrigin.addEventListener("click", () => {
   changeText(0, senryuData[index][0]);
   changeText(1, senryuData[index][1]);
   changeText(2, senryuData[index][2]);
+  incrementCounter();
 });
 
 // copyボタンをクリック
@@ -94,3 +108,4 @@ if (initialSenryu.length) {
   changeText(1, initialSenryu[getRandomInt(initialSenryu.length)][1]);
   changeText(2, initialSenryu[getRandomInt(initialSenryu.length)][2]);
 }
+
