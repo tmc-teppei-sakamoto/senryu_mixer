@@ -2,8 +2,7 @@
 川柳をミックスします<br>
 https://tmc-teppei-sakamoto.github.io/senryu_mixer/
 
-
-![image](https://user-images.githubusercontent.com/96226753/152159134-d07732de-2e63-448e-98a8-51b31ae2c05d.png)
+<img width="443" alt="スクリーンショット 2022-02-13 16 04 19" src="https://user-images.githubusercontent.com/96226753/153742831-9d7bc31a-36ea-4c92-9603-03ff3e5483c5.png">
 
 ※川柳の元データはWebで拾ってきたものであり、本アプリ作者が考案したものではありません。
 
@@ -11,6 +10,7 @@ https://tmc-teppei-sakamoto.github.io/senryu_mixer/
 * ORIGINボタン：作品のオリジナルがランダムで表示されます
 * MIXボタン：いろんな作品の上の句、中の句、下の句がミックスされて表示されます
 * **COPYボタン**：表示されている川柳をクリップボードにコピーできます
-* チェックボックス：川柳の種類を選択できます。(複数選択可能)
+* キープチェックボックス：変えたくない句を保持できます。（画像下側のチェックボックス）
+* 川柳ジャンルチェックボックス：川柳の種類を選択できます。(複数選択可能)
 <br>
 ぜひ面白い川柳が誕生したらCOPYボタンを使って仲間に教えてあげてください！
