@@ -51,6 +51,23 @@ img {
   width: 80%;
 }
 
+#thirdKeeper{
+  position: absolute;
+  top: 87%;
+  left: 35%;
+}
+#secondKeeper{
+  position: absolute;
+  top: 87%;
+  left: 50%;
+}
+#firstKeeper{
+  position: absolute;
+  top: 87%;
+  left: 65%;
+}
+
+
 .interface {
   position: relative;
   width: 90%;
