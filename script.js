@@ -11,6 +11,15 @@ console.log(database);
 let updateCountValue = 1;
 const updateCounter = document.getElementById("updateCounter");
 
+const firstKeeper = document.getElementById("firstKeeper");
+const secondKeeper = document.getElementById("secondKeeper");
+const thirdKeeper = document.getElementById("thirdKeeper");
+
+const firstTarget = document.body.querySelector("#content0");
+const secondTarget = document.body.querySelector("#content1");
+const thirfTarget = document.body.querySelector("#content2");
+const targets = [firstTarget, secondTarget, thirfTarget];
+
 /**
  * カウンターを増やす
  */
@@ -32,11 +41,7 @@ function getRandomInt(max) {
  * @param {string} text
  */
 function changeText(num, text) {
-  const target = document.body.querySelector("#content" + num);
-  if (target !== null) {
-    target.textContent = text;
-  }
-  // console.log(target.textContent);
+  targets[num].textContent = text;
 }
 
 /**
@@ -56,9 +61,46 @@ function getSenryu() {
       }
     }
   }
-  // console.log("getSenryu: ", arr);
   return arr;
 }
+
+/**
+ * ランダム川柳を表示する
+ * @param {Array} 川柳配列
+ * @returns {Boolean} 川柳を更新できた数
+ */
+function updateRandom(senryuArr){
+  let cnt = 0;
+  if (!firstKeeper.checked){
+    changeText(0, senryuArr[getRandomInt(senryuArr.length)][0]);
+    cnt++;
+  }
+  if (!secondKeeper.checked){
+    changeText(1, senryuArr[getRandomInt(senryuArr.length)][1]);  
+    cnt++;
+  }
+  if (!thirdKeeper.checked){
+    changeText(2, senryuArr[getRandomInt(senryuArr.length)][2]);
+    cnt++;
+  }
+
+  return cnt;
+}
+
+/**
+ * オリジナル作品を表示する
+ * @param {Array} 川柳配列
+ */
+ function updateOrigin(senryuArr){
+
+  const index = getRandomInt(senryuArr.length);
+
+  changeText(0, senryuArr[index][0]);
+  changeText(1, senryuArr[index][1]);
+  changeText(2, senryuArr[index][2]);
+
+}
+
 
 // mixボタンクリック
 const btnMix = document.getElementById("btn-mix");
@@ -68,10 +110,13 @@ btnMix.addEventListener("click", () => {
     window.alert("川柳ジャンルを選択してください");
     return;
   }
-  changeText(0, senryuData[getRandomInt(senryuData.length)][0]);
-  changeText(1, senryuData[getRandomInt(senryuData.length)][1]);
-  changeText(2, senryuData[getRandomInt(senryuData.length)][2]);
-  incrementCounter();
+
+  if( updateRandom(senryuData) > 0 ){
+    incrementCounter();
+  }else{
+    window.alert("Keep用のチェックボックスが全て選択されています");
+  }
+
 });
 
 // originボタンクリック
@@ -82,11 +127,9 @@ btnOrigin.addEventListener("click", () => {
     window.alert("川柳ジャンルを選択してください");
     return;
   }
-  const index = getRandomInt(senryuData.length);
-  changeText(0, senryuData[index][0]);
-  changeText(1, senryuData[index][1]);
-  changeText(2, senryuData[index][2]);
-  incrementCounter();
+
+  updateOrigin(senryuData)
+  updateCounter.innerText = "Original"
 });
 
 // copyボタンをクリック
@@ -108,4 +151,3 @@ if (initialSenryu.length) {
   changeText(1, initialSenryu[getRandomInt(initialSenryu.length)][1]);
   changeText(2, initialSenryu[getRandomInt(initialSenryu.length)][2]);
 }
-
